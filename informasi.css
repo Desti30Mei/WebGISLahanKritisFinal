@@ -1,0 +1,584 @@
+/* === GLOBAL === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* === HEADER === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #005a30, #008d4c);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo dan subjudul */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text .title {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.logo-text .subtitle {
+  font-size: 13px;
+  color: #dcdcdc;
+}
+
+
+/* Navigasi */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: background 0.3s, padding 0.3s, border-radius 0.3s;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+}
+
+
+/* === TABS === */
+.info-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #fff;
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.info-tabs a {
+  color: #005a30;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.info-tabs a:hover {
+  color: #005a30;
+}
+
+.info-tabs a {
+  color: #005a30;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.info-tabs a:hover {
+  background: linear-gradient(to right, #005a30, #00793d); /* hijau gradasi */
+  color: white;
+}
+
+.info-tabs a.active {
+  background: linear-gradient(to right, #005a30, #00793d); /* hijau gradasi */
+  color: white;
+  font-weight: 600;
+}
+
+/* === DEFINISI, STATISTIK, KLASIFIKASI === */
+.full-width {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.definisi,
+.statistik {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.klasifikasi {
+  list-style: none;
+  padding-left: 0;
+}
+
+.klasifikasi li {
+  margin-bottom: 10px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+}
+
+.sangat-kritis { background-color: #FF0000; }
+.kritis        { background-color: #FFA500; }
+.agak-kritis   { background-color: #FFFF00; }
+.potensial-kritis { background-color: #4CE600; }
+.tidak-kritis  { background-color: #007206; }
+
+/* === STATISTIK === */
+.stat-list {
+  list-style: none;
+  padding: 0;
+}
+
+.stat-list li {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+
+.sumber-data {
+  margin-top: 20px;
+}
+
+.sumber-data ul {
+  padding-left: 20px;
+}
+
+/* === BERITA === */
+.berita-section {
+  margin-top: 40px;
+}
+
+.berita-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.berita-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  width: 320px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.berita-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.berita-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #222;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+}
+
+.berita-content {
+  padding: 15px;
+}
+
+.berita-content h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* === DAMPAK === */
+.bahaya-dampak {
+  margin: 40px 20px;
+  padding: 20px;
+}
+
+.bahaya-dampak h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dampak-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dampak-box {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.dampak-header {
+  padding: 12px 16px;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  background-color: #f44336;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.dampak-box ul {
+  padding: 0 20px 20px;
+  list-style: none;
+}
+
+.dampak-box ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.dampak-box ul li i {
+  margin-right: 8px;
+  color: #f44336;
+}
+
+.dampak-img {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 16px auto 10px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* === STRATEGI PENANGANAN === */
+.strategi-section {
+  margin: 60px 20px;
+  padding: 20px;
+}
+
+.strategi-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.strategi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.strategi-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 340px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.strategi-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.strategi-header i {
+  font-size: 1.5rem;
+}
+
+/* Warna latar header */
+.strategi-card.green .strategi-header { background-color: #2e7d32; }
+.strategi-card.blue .strategi-header { background-color: #1976d2; }
+.strategi-card.yellow .strategi-header { background-color: #f9a825; }
+
+.strategi-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.strategi-body {
+  padding: 20px;
+}
+
+.strategi-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.strategi-body ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.strategi-body ul li i {
+  margin-right: 8px;
+  color: #444;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.link-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.link-icon:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* === STRATEGI PENCEGAHAN === */
+.pencegahan-section {
+  margin: 60px 20px;
+  padding: 20px;
+}
+
+.pencegahan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.pencegahan-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.pencegahan-card .card-header {
+  color: white;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.pencegahan-card .card-illustration {
+  font-size: 5rem;
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+.pencegahan-card ul {
+  list-style: none;
+  padding: 0 20px 20px;
+  margin: 0;
+}
+
+.pencegahan-card ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.pencegahan-card ul li i {
+  margin-right: 8px;
+  color: #444;
+}
+
+/* Header colors */
+.pencegahan-card.green .card-header { background-color: #388e3c; }
+.pencegahan-card.orange .card-header { background-color: #f9a825; color: black; }
+.pencegahan-card.blue .card-header { background-color: #1976d2; }
+
+
+
+/* === STATISTIK DAMPAK === */
+.statistik-dampak {
+  margin: 40px 20px;
+  padding: 20px;
+  background: #e8f9ff;
+  border-radius: 16px;
+}
+
+.statistik-dampak h3 {
+  margin-bottom: 20px;
+  color: #00aaff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statistik-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.statistik-box {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.statistik-box h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.statistik-box.red h2    { color: #d32f2f; }
+.statistik-box.yellow h2 { color: #f9a825; }
+.statistik-box.green h2  { color: #388e3c; }
+
+.statistik-box p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ===== Footer ===== */
+.main-footer {
+  background-color: #1c2b3a;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #2e3c50;
+}
+
+.main-footer .footer-left {
+  margin-bottom: 10px;
+}
+
+.main-footer .footer-right a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-footer .footer-right a:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .main-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-footer .footer-right a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+/* === Animasi Hover untuk Semua Card & Box Interaktif === */
+.berita-card,
+.dampak-box,
+.strategi-card,
+.pencegahan-card,
+.definisi,
+.statistik {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.berita-card:hover,
+.dampak-box:hover,
+.strategi-card:hover,
+.pencegahan-card:hover,
+.definisi:hover,
+.statistik:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

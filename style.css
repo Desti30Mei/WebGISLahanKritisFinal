@@ -1,0 +1,364 @@
+/*
+ * CSS WebGIS Lahan Kritis Bandung Utara
+ * Deskripsi: File ini berisi styling utama untuk halaman Beranda WebGIS.
+ */
+
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scroll saat klik navigasi */
+}
+
+/* ===== Header (Navigasi Utama) ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #005a30, #008d4c);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo dan Judul Situs */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text .title {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.logo-text .subtitle {
+  font-size: 13px;
+  color: #dcdcdc;
+}
+
+/* Navigasi Menu */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s, padding 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: linear-gradient(rgba(8, 117, 76, 0.6), rgba(8, 117, 76, 0.6)), url('asset/gambar/Bandung.jpg') center/cover no-repeat;
+  color: white;
+  padding: 40px 80px;
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 650px;
+}
+
+.hero .button-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Tombol Umum */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  color: #08754c;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn:hover {
+  background-color: #f1f1f1;
+}
+
+/* Tombol Sekunder */
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Selayang Pandang ===== */
+.selayang {
+  padding: 60px 80px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.selayang h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #0e8c57;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.selayang .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.selayang .text,
+.selayang .image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.selayang .text h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.selayang .text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.selayang .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Fitur ===== */
+.features {
+  padding: 60px 80px;
+  background-color: #fff;
+}
+
+.features h2,
+.features .section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  position: relative;
+}
+
+.features h2::after,
+.features .section-title::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background-color: #0e8c57;
+  margin: 10px auto 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+  font-size: 2rem;
+  color: #0e8c57;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #222;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== Tentang ===== */
+.tentang {
+  background-color: #f4fdf6;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tentang-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tentang-foto img {
+  width: 120px;
+  border-radius: 10px;
+  border: 2.5px solid #005a30;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.tentang-deskripsi {
+  max-width: 800px;
+  text-align: justify;
+}
+
+.tentang-deskripsi h3 {
+  margin-top: 0;
+  color: #005a30;
+}
+
+/* ===== Kontak ===== */
+.kontak {
+  background: linear-gradient(to right, #006633, #00994d);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.kontak h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.kontak-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.kontak-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kontak-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.kontak-list i {
+  margin-right: 10px;
+}
+
+.kontak-sosmed a {
+  margin: 0 8px;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.kontak-sosmed a:hover {
+  transform: scale(1.1);
+  color: #ffdd57;
+}
+
+/* ===== Footer ===== */
+.main-footer {
+  background-color: #1c2b3a;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #2e3c50;
+}
+
+.main-footer .footer-left {
+  margin-bottom: 10px;
+}
+
+.main-footer .footer-right a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-footer .footer-right a:hover {
+  color: #fff;
+}
+
+/* ===== Responsive: Mobile Footer ===== */
+@media (max-width: 600px) {
+  .main-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-footer .footer-right a {
+    display: block;
+    margin: 5px 0;
+  }
+}

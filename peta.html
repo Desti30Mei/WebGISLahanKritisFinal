@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peta - KRITALAND WebGIS Lahan Kritis</title>
+  <link rel="stylesheet" href="peta.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+</head>
+<body>
+
+  <!-- Topbar -->
+<header>
+  <div class="logo">
+  <img src="asset/gambar/Logo.png" alt="Logo" class="logo-img" />
+  <div class="logo-text">
+    <div class="title">KRITALAND</div>
+    <div class="subtitle">WebGIS Lahan kritis Kawasan Bandung Utara</div>
+  </div>
+</div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="peta.html">Peta</a>
+    <a href="informasi.html">Informasi</a>
+  </nav>
+</header>
+
+<!-- Judul Peta -->
+<div class="map-title">
+  <h2 class="section-title">Peta Lahan Kritis di Kawasan Bandung Utara</h2>
+</div>
+
+  <!-- Sidebar Kontrol Peta -->
+  <div class="map-control">
+  <h3><i class="fas fa-gear"></i> Kontrol Peta</h3>
+
+  <label for="basemap-select"><strong>Base Map:</strong></label>
+  <select id="basemap-select">
+    <option value="osm">OpenStreetMap</option>
+    <option value="world imagery">World Imagery</option>
+    <option value="terrain">Terrain</option>
+  </select>
+
+  <!-- Kontrol Layer -->
+<label><strong>Layer:</strong></label>
+<div class="layer-control">
+  <label><input type="checkbox" id="chk-kecamatan" checked> Batas Administrasi Kecamatan</label>
+  <label><input type="checkbox" id="chk-desa" checked> Batas Administrasi Desa</label>
+  <label><input type="checkbox" id="chk-lahan" checked> Lahan Kritis</label>
+  <label><input type="checkbox" id="chk-lulc" checked> Penggunaan Lahan</label>
+</div>
+
+  <div id="legend" class="legend">
+  <strong>Legenda:</strong><br>
+  <div><span class="legend-line-kecamatan"></span> Batas Administrasi Kecamatan</div>
+  <div><span class="legend-line-desa"></span> Batas Administrasi Desa</div>
+  <hr>
+  <div><span class="legend-color" style="background:#FF0000;"></span> Sangat Kritis</div>
+  <div><span class="legend-color" style="background:#FFA500;"></span> Kritis</div>
+  <div><span class="legend-color" style="background:#FFFF00;"></span> Agak Kritis</div>
+  <div><span class="legend-color" style="background:#4CE600;"></span> Potensial Kritis</div>
+  <div><span class="legend-color" style="background:#007206;"></span> Tidak Kritis</div>
+  <hr>
+  <div><span class="legend-color" style="background:#267300;"></span> Hutan</div>
+  <div><span class="legend-color" style="background:#4CE600;"></span> Kebun</div>
+  <div><span class="legend-color" style="background:#9ACD32;"></span> Sawah</div>
+  <div><span class="legend-color" style="background:#FFFF73;"></span> Ladang</div>
+  <div><span class="legend-color" style="background:#FFFFFF;"></span> Tanah Kosong</div>
+  <div><span class="legend-color" style="background:#A3FF73;"></span> Semak Belukar</div>
+  <div><span class="legend-color" style="background:#BFD9F2;"></span> Danau</div>
+  <div><span class="legend-color" style="background:#FEC9BF;"></span> Permukiman</div>
+</div>
+
+
+  <label><input type="checkbox" id="toggle-legend" checked> Tampilkan Legenda</label>
+
+</div>
+
+
+
+  <!-- Peta -->
+  <div id="map"></div>
+
+  <!-- Koordinat -->
+  <div id="koordinat" style="padding: 10px;">Koordinat: -</div>
+
+  <script src="peta.js"></script>
+</body>
+
+<!-- Footer -->
+  <footer class="main-footer">
+  <div class="footer-left">
+    © 2025 KRITALAND. Seluruh hak cipta dilindungi.
+  </div>
+  <div class="footer-right">
+    <a href="#">Kebijakan Privasi</a>
+    <a href="#">Syarat & Ketentuan</a>
+    <a href="#">FAQ</a>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* === HEADER BARU === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #005a30, #008d4c);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo dan subjudul */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text .title {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+.logo-text .subtitle {
+  font-size: 13px;
+  color: #dcdcdc;
+}
+
+
+/* Navigasi */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: background 0.3s, padding 0.3s, border-radius 0.3s;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+}
+
+
+/* ===== Judul Peta ===== */
+.map-title {
+  background-color: white;
+  padding: 20px 40px 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.map-title h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #003b18;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.map-title h2::after {
+  content: "";
+  display: block;
+  width: 500px;
+  height: 3px;
+  background-color: #0e8c57;
+  margin: 10px auto 0;
+}
+
+/* ===== Map Control ===== */
+.map-control {
+  position: absolute;
+  top: 180px; /* <--- ubah dari 180px ke 110px */
+  right: 20px;
+  width: 240px;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 900; /* <--- pastikan ini lebih rendah dari header */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+}
+
+
+.map-control h3 {
+  font-size: 0.85rem;
+  margin: 0 0 6px 0;
+}
+
+.map-control select {
+  width: 100%;
+  padding: 4px;
+  margin: 6px 0 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.map-control button {
+  width: 100%;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+/* ===== Layer & Legend ===== */
+.layer-control {
+  margin-top: 10px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+}
+
+.layer-control label,
+.layer-toggle label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+}
+
+.legend {
+  margin-top: 10px;
+  font-size: 0.72rem;
+}
+
+.legend strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.legend div {
+  margin-bottom: 3px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+  border: 1px solid #000;
+  transform: scale(0.85);
+  vertical-align: middle;
+}
+
+.legend-line-kecamatan {
+  display: inline-block;
+  width: 15px;
+  height: 0;
+  border-top: 3px dashed #000;
+  margin-right: 6px;
+}
+
+.legend-line-desa {
+  display: inline-block;
+  width: 15px;
+  height: 0;
+  border-top: 1px dashed #000;
+  margin-right: 6px;
+}
+
+/* ===== Map Area ===== */
+#map {
+  min-height: 630px;
+  z-index: 1;
+}
+
+/* ===== Footer ===== */
+.main-footer {
+  background-color: #1c2b3a;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  border-top: 1px solid #2e3c50;
+}
+
+.main-footer .footer-left {
+  margin-bottom: 10px;
+}
+
+.main-footer .footer-right a {
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-footer .footer-right a:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .main-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-footer .footer-right a {
+    display: block;
+    margin: 5px 0;
+  }
+}
